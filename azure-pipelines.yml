@@ -37,3 +37,15 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+          - task: AzureRmWebAppDeployment@4
+            inputs:
+              ConnectionType: 'AzureRM'
+              azureSubscription: 'Visual Studio Enterprise Subscription – MPN(79ef3d22-9974-47bc-94ac-6dfc2f4cf2f7)'
+              appType: 'webAppContainer'
+              WebAppName: 'gitlabci'
+              deployToSlotOrASE: true
+              ResourceGroupName: 'webapp'
+              SlotName: 'production'
+              DockerNamespace: 'dockerwebapptest12.azurecr.io'
+              DockerRepository: 'webapp'
+              DockerImageTag: 'latest'
