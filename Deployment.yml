@@ -44,7 +44,7 @@ app: azure-DevOps
 spec:
 containers:
 – name: AzureDevOps
-image: dockerwebapptest12.azurecr.io/aspnet:v1
+image: dockerwebapptest12.azurecr.io/sahilhulagepythonsamplevscodeflasktutorial:189
 ports:
 – containerPort: 80
 resources:
